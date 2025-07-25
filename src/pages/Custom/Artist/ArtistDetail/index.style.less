@@ -1,0 +1,157 @@
+@import '../../../../shared/styles/variable';
+
+.artist-detail-modal {
+  position: relative;
+
+  & .ant-modal-body {
+    padding: 0;
+  }
+
+  & .ant-modal-close {
+    display: none;
+  }
+
+  &:hover {
+    & .artist-action-hover {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.artist-detail-modal-header {
+  position: relative;
+  border-bottom: @border-style-base @border-width-base @border-color-base;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.artist-detail-modal-user {
+  padding: 10px;
+  // @media screen and (min-width: @screen-sm) {
+  //   margin-top: -12px;
+  // }
+
+  & h4 {
+    font-size: @font-size-lg;
+    font-weight: @font-weight-medium;
+  }
+}
+
+.artist-detail-modal-user-avatar {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 8px;
+  font-size: 28px;
+  padding: 10px;
+}
+
+.artist-detail-modal-content {
+  padding: 20px 24px;
+}
+
+.artist-detail-modal-scrollbar {
+  position: relative;
+  max-height: 600px;
+
+  & .ant-row > .ant-col {
+    margin-bottom: 0;
+  }
+}
+
+.artist-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: @text-color-disabled;
+}
+
+.artist-action-hover {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.artist-note {
+  padding: 20px 20px 20px 0;
+
+  [dir=rtl] & {
+    padding-left: 20px;
+    padding-right: 0;
+  }
+
+  @media screen and (min-width: @screen-lg) {
+    padding-right: 32px;
+
+    [dir=rtl] & {
+      padding-right: 0;
+      padding-left: 32px;
+    }
+  }
+
+  @media screen and (min-width: @screen-xxl) {
+    padding-right: 40px;
+
+    [dir=rtl] & {
+      padding-right: 0;
+      padding-left: 40px;
+    }
+  }
+}
+
+.artist-detail-modal-item {
+  padding: 20px 0;
+}
+
+.artist-detail-modal-item-title {
+  font-weight: @font-weight-medium;
+  font-size: @font-size-lg;
+  margin-bottom: 8px;
+}
+
+.artist-detail-modal-item-content {
+  position: relative;
+}
+
+.artist-other-detail-item {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+.artist-other-detail-item-content {
+  margin-left: 8px;
+  color: @text-color-secondary;
+  font-size: @font-size-base;
+
+  [dir=rtl] & {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+}
+.artist-other-detail-item {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+.artist-other-detail-item-icon {
+  font-size: @font-size-lg;
+  color: @grey-600;
+}
+.artist-detail-modal-item-content {
+  position: relative;
+}
+
+hr{
+  border-top: 1px solid #3b3a3a;
+}

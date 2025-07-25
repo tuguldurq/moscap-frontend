@@ -1,0 +1,65 @@
+@import '../../../../shared/styles/variable';
+
+.header-login{
+  margin-left: 10px;
+  @media screen and (min-width: @screen-xl) {
+    margin-left: 40px;
+  }
+  &:hover{
+    color: #ffffff;
+    &::after{
+      border-bottom: none !important;
+    }
+  }
+
+}
+.ant-menu-submenu{
+  z-index: 3000;
+}
+.menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: @screen-lg) {
+  .menu-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    .ant-menu{
+      display: none;
+    }
+  }
+  .header-login{
+    display: none;
+  }
+  .lang{
+    display: none;
+  }
+  .header {
+    height: 75px;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .responsive-logo{
+    width: 60px !important;
+    height: 50px
+  };
+}

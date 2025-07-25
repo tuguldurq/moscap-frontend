@@ -1,0 +1,348 @@
+@import '../../shared/styles/variable';
+@import '../../shared/styles/mixin';
+
+.logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.ant-row-rtl .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+.background {
+  background: linear-gradient(0deg, rgba(0, 9, 44, 0.75), rgba(0, 9, 44, 0.75)), url(./../../assets/images/image_6483441.JPG);
+  background-size: cover;
+  height: 540px;
+  background-position: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  .ant-typography {
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    @media screen and (min-width: @screen-md) {
+      width: 850px;
+      line-height: 1.8;
+    }
+  }
+}
+.background-music-user {
+  background: linear-gradient(0deg, rgba(0, 9, 44, 0.75), rgba(0, 9, 44, 0.75)), url(./../../assets/images/image_64834412.JPG);
+  background-size: cover;
+  height: 540px;
+  background-position: center 20%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  .ant-typography {
+    color: #ffffff;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    @media screen and (min-width: @screen-md) {
+      width: 900px;
+    }
+  }
+}
+.background-artist {
+  background: linear-gradient(0deg, rgba(0, 9, 44, 0.75), rgba(0, 9, 44, 0.75)), url(./../../assets/images/image_64834413.JPG);
+  background-size: cover;
+  height: 540px;
+  background-position: center 70%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  .ant-typography {
+    color: #ffffff;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    @media screen and (min-width: @screen-md) {
+      width: 600px;
+    }
+  }
+}
+
+.text {
+  color: #fff;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+// .ant-layout-header{
+//   height: 67px;
+// }
+.landing-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* push the header menu above everything else */
+  &.header-light{
+    background: transparent !important;
+  }
+  &.header-dark{
+    background: #001529 !important;
+  }
+  .ant-menu-horizontal{
+    border-bottom: none;
+  }
+  .ant-menu{
+    color: #ffffff;
+    background: transparent;
+  }
+}
+
+.ant-card-body{
+  padding: 0 40px;
+}
+.container-image{
+  position: relative;
+  float: right;
+
+  .image1{
+    position: absolute;
+    top: 55px;
+    left: -32px;
+    width: 330px;
+    height: 220px;
+    border-radius: 20px;
+    background: url('https://www.ipom.gov.mn/data/main/main1606192533.png');
+    filter: drop-shadow(-8px 0px 25px rgba(0, 0, 0, 0.4));
+    background-size: 160%;
+    transform: scale(1.2);
+    background-position: center top;
+  }
+  .image2{
+    height: 270px;
+    width: 370px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgba(192, 192, 192, 0.5), rgba(192, 192, 192, 0.5)), url(https://www.ipom.gov.mn/data/main/main1606192533.png);
+    background-size: cover;
+
+  }
+}
+.container-image1{
+  position: relative;
+  float: left;
+  
+  .image1{
+    position: absolute;
+    top: 35px;
+    left: -35px;
+    background: url('./../../assets/images/teaser.jpg');
+    filter: drop-shadow(-8px 0px 25px rgba(0, 0, 0, 0.4));
+    height: 300px;
+    width: 370px;
+    background-size: 190%;
+    border-radius: 20px;
+    background-position: center;
+
+  }
+  .image2{
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(253, 253, 253, 0.5), rgba(192, 192, 192, 0.5)), url('https://www.cisac.org/sites/main/files/styles/teaser/public/2020-12/teaser.jpg?itok=G-CEiMGy');
+    height: 300px;
+    width: 370px;
+    border-radius: 20px,
+  }
+}
+.container-image2{
+  position: relative;
+  float: right;
+
+  .image1{
+    position: absolute;
+    top: 55px;
+    left: -32px;
+    width: 330px;
+    height: 220px;
+    border-radius: 20px;
+    background: url('./../../assets/images/Meta-Logo.jpg');
+    filter: drop-shadow(-8px 0px 25px rgba(0, 0, 0, 0.4));
+    background-size: contain;
+    transform: scale(1.2);
+    background-position: center;
+  }
+  .image2{
+    height: 270px;
+    width: 370px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgba(192, 192, 192, 0.5), rgba(192, 192, 192, 0.5)),  url('./../../assets/images/Meta-Logo.jpg');
+    background-size: cover;
+
+  }
+}
+.home-button-primary{
+  width: 184px;
+  height: 46px;
+  background-color: #0270BD;
+  color: #ffffff;
+  border-radius: 10px;
+  &:hover{
+    color: #ffffff;
+    background-color: #0270BD;
+    border-color: #0270BD;
+    filter: brightness(85%);
+  }
+  .anticon-arrow-right{
+    margin-left: 20px !important;
+    font-size: 17px;
+  }
+}
+.home-button-secondary{
+  width: 184px;
+  height: 46px;
+  background: #BA5948;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  &:hover{
+    color: #ffffff;
+    background-color: #BA5948;
+    border-color: #BA5948;
+    filter: brightness(85%);
+  }
+  .anticon-arrow-right{
+    margin-left: 20px !important;
+    font-size: 17px;
+  }
+}
+
+.content {
+  padding: 30px
+}
+
+.news-pantasia {
+  width: 330px;
+  height: 420px;
+  background: linear-gradient(179.84deg, rgba(0, 0, 0, 0) 62.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url(./../../assets/images/news.jpg);
+  background-size: cover;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  background-position: center;
+  &:hover{
+    filter: brightness(75%);
+    transition: 0.5s;
+  }
+  p{
+    position:absolute;
+    top: 70%;
+    color: #ffffff;
+    padding: 20px;
+    text-align: justify;
+  }
+}
+
+
+.news-nsug {
+  width: 330px;
+  height: 420px;
+  background: linear-gradient(179.84deg, rgba(0, 0, 0, 0) 22.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url(./../../assets/images/nsug2.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  background-position: top;
+  &:hover{
+    filter: brightness(75%);
+    transition: 0.5s;
+  }
+  p{
+    position:absolute;
+    top: 40%;
+    color: #ffffff;
+    padding: 20px;
+    text-align: justify;
+  }
+}
+.news-cisac {
+  width: 330px;
+  height: 420px;
+  background: linear-gradient(179.84deg, rgba(0, 0, 0, 0) 62.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url(./../../assets/images/cisac.jpg);
+  background-size: 100%;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  background-position: center;
+  &:hover{
+    filter: brightness(75%);
+    transition: 0.5s;
+  }
+  p{
+    position:absolute;
+    top: 70%;
+    color: #ffffff;
+    padding: 20px;
+    text-align: justify;
+  }
+}
+.ant-menu-title-content > a{
+  color: #ffffff;
+}
+
+.ant-menu-horizontal > .ant-menu-item a{
+  color: #ffffff;
+}
+
+.ant-layout{
+  background: #ffffff;
+}
+
+.ant-card {
+  box-shadow:0 0 5px 5px rgb(0 0 0 / 3%)
+}
+
+@media screen and (max-width: @screen-lg) {
+  .ant-menu-title-content > a{
+    color: #001529;
+  }
+  .container-image {
+    float: none;
+    .image1 {
+      width: 100%;
+      height: 300px;
+      left: -15px;
+      transform: scale(1);
+    }
+    .image2 {
+      width: 100%;
+      margin-left: 17px;
+    }
+  }
+  .container-image1 {
+    float: none;
+    .image1 {
+      width: 100%;
+      left: -15px;
+    }
+    .image2 {
+      width: 100%;
+      margin-left: 17px;
+    }
+  }
+  .container-image2 {
+    float: none;
+    .image1 {
+      width: 84%;
+      left: 12px;
+    }
+    .image2 {
+      width: 100%;
+      margin-left: 17px;
+    }
+  }
+}

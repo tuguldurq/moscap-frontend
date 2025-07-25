@@ -1,0 +1,120 @@
+@import '../../../../../shared/styles/variable';
+
+.manager-modal {
+  position: relative;
+
+  & .ant-modal-body {
+    padding: 0;
+  }
+}
+
+.manager-modal-scrollbar {
+  height: 400px;
+}
+
+.manager-form {
+  position: relative;
+
+  & .form-field {
+    width: 100%;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: @screen-xxl) {
+      margin-bottom: 24px;
+    }
+  }
+
+  & .ant-picker {
+    width: 100%;
+  }
+}
+
+.manager-form-header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: @border-style-base @border-width-base @border-color-base;
+
+  & .dropzone {
+    margin-bottom: 0;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.manager-form-avatar {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.manager-form-header-title {
+  font-weight: @font-weight-medium;
+}
+
+.manager-form-content {
+  position: relative;
+}
+
+.manager-form-content-item {
+  padding: 20px;
+  @media screen and (min-width: @screen-lg) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: @screen-xxl) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: @border-width-base @border-style-base @border-color-base;
+  }
+}
+
+.manager-form-content-item-title {
+  font-size: @font-size-lg;
+  font-weight: @font-weight-medium;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: @screen-xxl) {
+    margin-bottom: 24px;
+  }
+}
+
+.manager-form-content-field {
+  position: relative;
+}
+
+.manager-form-footer {
+  padding: 16px 32px;
+  border-top: @border-width-base @border-style-base @border-color-base;
+  border-radius: 0 0 @card-radius @card-radius;
+  text-align: right;
+
+  [dir=rtl] & {
+    text-align: left;
+  }
+
+  & .ant-btn {
+    min-width: 100px;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+
+      [dir=rtl] & {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.manager-form-btn {
+  padding: 8px 32px;
+}

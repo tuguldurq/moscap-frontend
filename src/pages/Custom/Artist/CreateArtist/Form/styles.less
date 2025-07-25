@@ -1,0 +1,36 @@
+@import '../../../../../shared/styles/variable.less';
+
+.register-width{
+  width: 60%;
+  height: 35.8px;
+  @media screen and (max-width: @screen-xs-max) {
+    width: 55%;
+  height: 35.8px;
+  }
+}
+
+.bank-name {
+  width: 200px;
+  @media screen and (max-width: @screen-xs-max) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.bank-account {
+  width: initial;
+  @media screen and (max-width: @screen-xs-max) {
+    width: 100%;
+  }
+}
+.ant-divider{
+  margin-inline: auto; 
+  display: flex; 
+  justify-content: center;
+  @media (max-width: 767px) {
+    max-width: 400px;
+  };
+  @media (max-width: 479px) {
+    max-width: 300px;
+  }
+}

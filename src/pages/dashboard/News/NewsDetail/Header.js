@@ -1,0 +1,64 @@
+import React from 'react';
+// import {useDispatch} from 'react-redux';
+// import {onUpdateSelectedTask} from '../../../../redux/actions';
+import {useNavigate} from 'react-router-dom';
+// import PropTypes from 'prop-types';
+import {BiArrowBack} from 'react-icons/bi';
+import {useIntl} from 'react-intl';
+import AppIconButton from '@crema/core/AppIconButton';
+import AppsDeleteIcon from '@crema/core/AppsDeleteIcon';
+// import AppsStarredIcon from '@crema/core/AppsStarredIcon';
+
+const NewsDetailHeader = () => {
+  // const {selectedTask} = props;
+  const {messages} = useIntl();
+
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onClickBackButton = () => {
+    navigate(-1);
+  };
+
+  // const onChangeStarred = (checked) => {
+  //   const task = selectedTask;
+  //   // task.isStarred = checked;
+  //   dispatch(onUpdateSelectedTask(task));
+  // };
+
+  // const onDeleteTask = () => {
+  //   const task = selectedTask;
+  //   task.folderValue = 126;
+  //   dispatch(onUpdateSelectedTask(task));
+  //   navigate(-1);
+  // };
+
+  return (
+    <>
+      <AppIconButton
+        className='todo-detail-arrow'
+        title={messages['common.back']}
+        onClick={onClickBackButton}
+        icon={<BiArrowBack />}
+      />
+      <span>{messages['common.back']}</span>
+      {/* <StatusToggleButton selected|ask={selectedTask} /> */}
+
+      {/* <span className='todo-detail-header-star-icon'>
+        <AppsStarredIcon item={selectedTask} onChange={onChangeStarred} />
+      </span> */}
+
+      <AppsDeleteIcon
+        // deleteAction={onDeleteTask}
+        deleteTitle={messages['todo.deleteMessage']}
+        className='todo-detail-header-delete-icon'
+      />
+    </>
+  );
+};
+
+export default NewsDetailHeader;
+
+// NewsDetailHeader.propTypes = {
+//   selectedTask: PropTypes.object.isRequired,
+// };

@@ -1,0 +1,44 @@
+.menu-footer-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 17.4rem;
+  border-top:1px solid rgba(0, 0, 0, 0.12);
+  .ant-menu{
+    border: none;
+    .ant-menu-item{
+      &:hover{
+        color: #ff4d4f;
+      }
+      .ant-menu-item-icon{
+        font-size: 20px;
+      }
+      .ant-menu-title-content{
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+.ant-layout-sider-collapsed{
+  .menu-footer-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 3.9rem;
+    .ant-menu{
+      border: none;
+      .ant-menu-item{
+      padding: 0 20px;
+
+        &:hover{
+          color: #ff4d4f;
+        }
+        .ant-menu-item-icon{
+          font-size: 20px;
+        }
+        .ant-menu-title-content{
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}

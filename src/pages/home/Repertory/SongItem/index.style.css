@@ -1,0 +1,7 @@
+
+.expanded-item-detail {
+    margin-left: 100px;
+    @media screen and (max-width: 700px) {
+        margin-left: 40px
+    }
+}

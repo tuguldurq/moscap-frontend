@@ -1,0 +1,5 @@
+.disabled-form input,
+.disabled-form button {
+  opacity: 0.5; /* Reduce opacity of inputs and buttons */
+  pointer-events: none; /* Disable pointer events on inputs and buttons */
+}
