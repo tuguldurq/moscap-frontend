@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+`docker run -p 3000:3000 frontend-developer`
+
 In the project directory, you can run:
 
 ### `yarn start`
