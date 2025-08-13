@@ -9,7 +9,7 @@ export const VIEW_TYPE = Object.freeze({LIST: 1, GRID: 2});
 const INIT = {
   newsList: [],
   newsItem: null,
-  viewType: VIEW_TYPE.LIST,
+  viewType: VIEW_TYPE.GRID,
   filter: null,
 };
 

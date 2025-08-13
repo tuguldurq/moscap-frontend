@@ -163,6 +163,8 @@ export const DELETE_ARTIST = 'DELETE_ARTIST';
 export const GET_NEWS_LIST = 'get_news_list';
 export const GET_NEWS_ITEM = 'get_news_item';
 export const CREATE_NEWS = 'create_news';
+export const DELETED_NEWS = 'deleted_news';
+
 // artist manager
 export const GET_MANAGER_LIST = 'get_manager_list';
 export const GET_MANAGER_DETAIL = 'GET_MANAGER_DETAIL';

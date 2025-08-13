@@ -1,19 +1,21 @@
 import React from 'react';
-// import {useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 // import {onUpdateSelectedTask} from '../../../../redux/actions';
 import {useNavigate} from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {BiArrowBack} from 'react-icons/bi';
 import {useIntl} from 'react-intl';
 import AppIconButton from '@crema/core/AppIconButton';
 import AppsDeleteIcon from '@crema/core/AppsDeleteIcon';
 // import AppsStarredIcon from '@crema/core/AppsStarredIcon';
+import {deleteNews} from 'redux/actions';
 
-const NewsDetailHeader = () => {
+const NewsDetailHeader = (props) => {
   // const {selectedTask} = props;
   const {messages} = useIntl();
+  const {id} = props;
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onClickBackButton = () => {
@@ -26,12 +28,10 @@ const NewsDetailHeader = () => {
   //   dispatch(onUpdateSelectedTask(task));
   // };
 
-  // const onDeleteTask = () => {
-  //   const task = selectedTask;
-  //   task.folderValue = 126;
-  //   dispatch(onUpdateSelectedTask(task));
-  //   navigate(-1);
-  // };
+  const onDeleteTask = () => {
+    dispatch(deleteNews(id));
+    navigate(-1);
+  };
 
   return (
     <>
@@ -48,17 +48,19 @@ const NewsDetailHeader = () => {
         <AppsStarredIcon item={selectedTask} onChange={onChangeStarred} />
       </span> */}
 
-      <AppsDeleteIcon
-        // deleteAction={onDeleteTask}
-        deleteTitle={messages['todo.deleteMessage']}
-        className='todo-detail-header-delete-icon'
-      />
+      <div style={{marginLeft: 20}}>
+        <AppsDeleteIcon
+          deleteAction={onDeleteTask}
+          deleteTitle={messages['todo.deleteMessage']}
+          className='todo-detail-header-delete-icon'
+        />
+      </div>
     </>
   );
 };
 
 export default NewsDetailHeader;
 
-// NewsDetailHeader.propTypes = {
-//   selectedTask: PropTypes.object.isRequired,
-// };
+NewsDetailHeader.propTypes = {
+  id: PropTypes.number,
+};

@@ -1,32 +1,22 @@
-import React, {useState} from 'react';
-import IntlMessages from '../../../../../@crema/utility/IntlMessages';
+import React from 'react';
 import PropTypes from 'prop-types';
 // import {useDispatch} from 'react-redux';
 // import {setCurrentProduct} from '../../../../../redux/actions/News';
 import {useNavigate} from 'react-router-dom';
-import {HeartFilled, HeartOutlined, StarOutlined} from '@ant-design/icons';
 import './index.style.less';
 import AppCard from '../../../../../@crema/core/AppCard';
+import {Typography} from 'antd';
 
 const GridItem = (props) => {
   const {item} = props;
-  const [isFavorite, setIsFavorite] = useState(false);
   const navigate = useNavigate();
-
-  const OnFavorite = () => {
-    setIsFavorite(!isFavorite);
-  };
+  const {Paragraph} = Typography;
 
   return (
     <AppCard
       className='product-grid-card item-hover'
-      onClick={() => navigate('/dashboard/pages/news/' + item.id)}>
+      onClick={() => navigate('/dashboard-news/' + item.id)}>
       <div className='product-grid-card-header'>
-        <span className='product-grid-card-header-badge'>
-          {item.rating}
-          <StarOutlined />
-        </span>
-
         <div className='product-grid-card-header-thumb'>
           {item.images.length > 0 && (
             <div
@@ -39,15 +29,16 @@ const GridItem = (props) => {
             </div>
           )}
         </div>
-
-        <span className='product-list-favor-checked' onClick={OnFavorite}>
-          {isFavorite ? <HeartFilled /> : <HeartOutlined />}
-        </span>
       </div>
 
       <h3 className='text-truncate product-grid-card-title'>{item.title}</h3>
-
-      <div className='product-grid-action'>
+      <p className='product-list-card-content-para'>
+        <Paragraph ellipsis>
+          <div dangerouslySetInnerHTML={{__html: item?.description}} />
+          {/* <div>{item?.description}</div> */}
+        </Paragraph>
+      </p>
+      {/* <div className='product-grid-action'>
         <span className='product-grid-action-item'>
           $ {+item.mrp - Math.round((+item.mrp * +item.discount) / 100)}
         </span>
@@ -55,7 +46,7 @@ const GridItem = (props) => {
         <span className='product-grid-action-item green'>
           {item.discount}% <IntlMessages id='ecommerce.off' />
         </span>
-      </div>
+      </div> */}
     </AppCard>
   );
 };

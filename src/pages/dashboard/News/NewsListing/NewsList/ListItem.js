@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import IntlMessages from '../../../../../@crema/utility/IntlMessages';
+// import IntlMessages from '../../../../../@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
 import {useNavigate} from 'react-router-dom';
-import {HeartFilled, HeartOutlined} from '@ant-design/icons';
-import {Checkbox, Rate} from 'antd';
+// import {HeartFilled, HeartOutlined} from '@ant-design/icons';
+// import {Checkbox, Rate} from 'antd';
 import AppCard from '../../../../../@crema/core/AppCard';
 import {Typography} from 'antd';
 
@@ -22,17 +22,17 @@ const settings = {
 
 const ListItem = (props) => {
   const {item} = props;
-  const [isFavorite, setIsFavorite] = useState(false);
+  // const [isFavorite, setIsFavorite] = useState(false);
   const navigate = useNavigate();
 
-  const OnFavorite = () => {
-    setIsFavorite(!isFavorite);
-  };
+  // const OnFavorite = () => {
+  //   setIsFavorite(!isFavorite);
+  // };
 
   return (
     <AppCard
       className='product-list-card item-hover'
-      onClick={() => navigate('/dashboard/pages/news/' + item.id)}>
+      onClick={() => navigate('/dashboard-news/' + item.id)}>
       <div className='product-list-card-content'>
         <div className='product-list-slider'>
           <Slider className='slick-slider-global' {...settings}>
@@ -53,18 +53,19 @@ const ListItem = (props) => {
           <div className='product-list-slider-content-header'>
             <h3 className='text-truncate'>{item.title}</h3>
 
-            <span className='product-list-favor-checked' onClick={OnFavorite}>
+            {/* <span className='product-list-favor-checked' onClick={OnFavorite}>
               {isFavorite ? <HeartFilled /> : <HeartOutlined />}
-            </span>
+            </span> */}
           </div>
 
           <p className='product-list-card-content-para'>
             <Paragraph ellipsis>
-              <div>{item?.description}</div>
+              <div dangerouslySetInnerHTML={{__html: item?.description}} />
+              {/* <div>{item?.description}</div> */}
             </Paragraph>
           </p>
 
-          <div className='product-list-price'>
+          {/* <div className='product-list-price'>
             <div className='product-list-price-item'>
               <span className='product-list-price-item-text'>
                 <IntlMessages id='ecommerce.exclusivePrice' />:
@@ -95,7 +96,7 @@ const ListItem = (props) => {
               <Rate value={item.rating} />
               <span>{`(${item.reviews})`}</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </AppCard>

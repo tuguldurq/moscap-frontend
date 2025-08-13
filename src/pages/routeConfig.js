@@ -35,14 +35,14 @@ import {
   // MdTimeline,
 } from 'react-icons/md';
 // import {VscFeedback} from 'react-icons/vsc';
-// import {
-//   BsBriefcase,
-//   BsCart4,
-//   BsChatDots,
-//   BsNewspaper,
-//   BsQuestionDiamond,
-//   BsTable,
-// } from 'react-icons/bs';
+import {
+  // BsBriefcase,
+  // BsCart4,
+  // BsChatDots,
+  BsNewspaper,
+  // BsQuestionDiamond,
+  // BsTable,
+} from 'react-icons/bs';
 // import {GiCloverSpiked} from 'react-icons/gi';
 // import {FaRegCalendarAlt, FaRegHospital, FaRegImages} from 'react-icons/fa';
 // import {CgAttachment, CgFeed, CgProfile, CgUserList} from 'react-icons/cg';
@@ -199,6 +199,15 @@ const routesConfig = [
     path: '/dashboard-songs',
     permittedRole: [RoutePermittedRole.admin],
   },
+  {
+    id: 'dashboard-news',
+    title: 'dashboard-news',
+    messageId: 'home.news',
+    icon: <BsNewspaper />,
+    path: '/dashboard-news',
+    permittedRole: [RoutePermittedRole.admin], // haragdahiig zuwhuurh role
+  },
+
   //   ],
   // },
   //old

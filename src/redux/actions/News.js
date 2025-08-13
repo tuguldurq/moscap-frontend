@@ -7,9 +7,31 @@ import {
   GET_NEWS_LIST,
   SET_NEWS_VIEW_TYPE,
   SHOW_MESSAGE,
+  DELETED_NEWS,
 } from '../../shared/constants/ActionTypes';
 import Api from '../../@crema/services/auth/jwt-auth/jwt-api';
 import IntlMessages from '../../@crema/utility/IntlMessages';
+
+export const deleteNews = (id) => {
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    Api.delete(`/news/${id}`)
+      .then((data) => {
+        if (data.status === 200) {
+          dispatch({type: FETCH_SUCCESS});
+          dispatch({type: DELETED_NEWS});
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};
 
 export const onGetNewsList = () => {
   return (dispatch) => {

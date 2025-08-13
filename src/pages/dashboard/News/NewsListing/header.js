@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {setViewType} from '../../../../redux/actions/News';
 import {VIEW_TYPE} from '../../../../redux/reducers/News';
 import PropTypes from 'prop-types';
-import {Button, Input} from 'antd';
+import {Button} from 'antd';
 import {
   AppstoreOutlined,
   PlusCircleFilled,
@@ -14,26 +14,26 @@ import './header.style.less';
 import {useIntl} from 'react-intl';
 import {useNavigate} from 'react-router-dom';
 
-const NewsHeader = ({onChange, viewType}) => {
+const NewsHeader = ({viewType}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {messages} = useIntl();
-  const {Search} = Input;
+  // const {Search} = Input;
 
   return (
     <div className='product-header'>
       <div className='product-header-left'>
-        <Search
+        {/* <Search
           className='product-header-search'
           placeholder={messages['common.searchHere']}
           onChange={(e) => onChange(e.target.value)}
-        />
+        /> */}
       </div>
       <div className='product-header-right'>
         <Button
           icon={<PlusCircleFilled />}
           style={{marginRight: 15}}
-          onClick={() => navigate('/dashboard/pages/news/create')}
+          onClick={() => navigate('/dashboard-news/create')}
           type='primary'>
           {messages['sidebar.pages.addNews']}
         </Button>

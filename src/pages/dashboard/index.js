@@ -12,8 +12,8 @@ const Dashboard = React.lazy(() => import('../Custom/Dashboard'));
 // const Metrics = React.lazy(() => import('./Metrics'));
 // const Widgets = React.lazy(() => import('./Widgets'));
 // const Artists = React.lazy(() => import('./Artists'));
-// const News = React.lazy(() => import('./News'));
-// const CreateNews = React.lazy(() => import('./News/CreateNews'));
+const News = React.lazy(() => import('./News'));
+const CreateNews = React.lazy(() => import('./News/CreateNews'));
 // const Artist = React.lazy(() => import('../Custom/Artist'));
 export const dashboardConfig = [
   {
@@ -30,6 +30,21 @@ export const dashboardConfig = [
     permittedRole: [RoutePermittedRole.admin],
     path: '/dashboard-songs',
     element: <Songs />,
+  },
+  {
+    path: '/dashboard-news',
+    permittedRole: [RoutePermittedRole.admin],
+    element: <News />,
+  },
+  {
+    path: '/dashboard-news/create',
+    permittedRole: [RoutePermittedRole.admin],
+    element: <CreateNews />,
+  },
+  {
+    path: '/dashboard-news/:id',
+    permittedRole: [RoutePermittedRole.admin],
+    element: <News />,
   },
   // {
   //   path: '/dashboard/users',
@@ -72,15 +87,5 @@ export const dashboardConfig = [
   // {
   //   path: '/dashboard/widgets',
   //   element: <Widgets />,
-  // },
-  // {
-  //   path: ['/dashboard/pages/news', '/dashboard/pages/news/:id'],
-  //   permittedRole: [RoutePermittedRole.admin],
-  //   element: <News />,
-  // },
-  // {
-  //   path: '/dashboard/pages/news/create',
-  //   permittedRole: [RoutePermittedRole.admin],
-  //   element: <CreateNews />,
   // },
 ];

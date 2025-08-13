@@ -31,7 +31,7 @@ const NewsDetail = () => {
   return (
     <div ref={contentRef}>
       <AppsHeader>
-        <Header />
+        <Header id={id} />
       </AppsHeader>
       <AppsContent isDetailView>
         <div style={{padding: 50}}>
