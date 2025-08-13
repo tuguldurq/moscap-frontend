@@ -8,6 +8,7 @@ import {CKEditor} from '@ckeditor/ckeditor5-react';
 import Classic from '@ckeditor/ckeditor5-build-classic';
 import {useDispatch} from 'react-redux';
 import {createNews} from 'redux/actions/News';
+import {useNavigate} from 'react-router-dom';
 
 const CreateNews = () => {
   const [content, setContent] = useState();
@@ -19,6 +20,7 @@ const CreateNews = () => {
 
   const [form] = Form.useForm();
   const {messages} = useIntl();
+  const navigate = useNavigate();
 
   const onFinish = (values) => {
     const files = [];
@@ -31,6 +33,7 @@ const CreateNews = () => {
       images: files,
     };
     dispatch(createNews(data));
+    navigate(-1);
   };
 
   const handleChange = ({fileList: newFileList}) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Layout, Row, Col, Card, Typography, Button, Space} from 'antd';
 import './index.style.less';
 import MyCarousel from './Carousel';
@@ -13,14 +13,22 @@ import LandingHeader from 'pages/home/Components/Header';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppPageMetadata from '@crema/core/AppPageMetadata';
 import CustomFooter from './Footer';
+import {useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
+import {onGetNewsList} from 'redux/actions';
 // import MyCarousel from './Carousel';
 const {Content} = Layout;
 // const {Title} = Typography;
-const container = 18;
 const xs = 24;
-console.log(container);
+
 const LandingPage = () => {
   const {messages} = useIntl();
+  const dispatch = useDispatch();
+  const {newsList} = useSelector(({news}) => news);
+  useEffect(() => {
+    dispatch(onGetNewsList());
+  }, [dispatch]);
+
   return (
     <Layout>
       <AppPageMetadata title='MOSCAP' />
@@ -201,22 +209,31 @@ const LandingPage = () => {
           </Typography.Title>
         </center>
         <Row gutter={32} justify={'center'} style={{marginTop: 50}}>
-          <Col>
-            <div className='news-nsug'>
-              <p>
-                {' '}
-                Нийслэлийн соёл, урлагийн газар болон MOSCAP нь хөгжмийн
-                зохиолч, яруу найрагчдын дуу хөгжмийг сурталчлах, олон нийтэд
-                түгээх, хууль бус үйл ажиллагааг таслан зогсоох, уран
-                бүтээлчдийн дуу хөгжмийн бүтээлийн биет болон биет бус
-                борлуулалт, хэрэглээний төрөл, орлогыг нэмэгдүүлэх замаар
-                зохиогчийн эрхийг хамгаалах, бэхжүүлэх, Нийслэлийн оюун соёлыг
-                дээшлүүлэх зорилгоор хамтын ажиллагааг хэрэгжүүлж байна.
-              </p>
-            </div>
-          </Col>
-          <Col>
-            <div className='news-cisac'>
+          {newsList?.map((item, index) => (
+            <Col key={'col-' + index}>
+              <div
+                className='news-cisac'
+                key={index}
+                style={{
+                  background: `linear-gradient(
+                    179.84deg,
+                    rgba(0, 0, 0, 0) 22.64%,
+                    rgba(0, 0, 0, 0.8) 80.33%,
+                    #000000 99.86%,
+                  ), url(https://moscap.mn/static/media/nsug2.50dbdd6d.jpg)`,
+                  backgroundSize: `100%`,
+                  backgroundRepeat: `no-repeat`,
+                }}>
+                <p>{item?.title}</p>
+              </div>
+            </Col>
+          ))}
+          {/* <Col>
+            <div className='news-cisac' style={{  
+                background: `linear-gradient(179.84deg, rgba(0, 0, 0, 0) 22.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url(https://moscap.mn/static/media/cisac.177fa468.jpg)`,
+                backgroundSize: `100%`,
+                backgroundRepeat: `no-repeat`,
+              }}>
               <p>
                 {' '}
                 CISAC-ийн Ази Номхон далайн бүсийн ээлжит хурал нь 2023 оны 5
@@ -226,7 +243,12 @@ const LandingPage = () => {
             </div>
           </Col>
           <Col>
-            <div className='news-pantasia'>
+            <div className='news-pantasia'
+             style={{  
+              background: `linear-gradient(179.84deg, rgba(0, 0, 0, 0) 22.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url( https://moscap.mn/static/media/news.bb742573.jpg)`,
+              backgroundSize: `100%`,
+              backgroundRepeat: `no-repeat`,
+            }}>
               <p>
                 {' '}
                 Fantasia Studio нь Пиксар-н уран бүтээлүүдээр оркестрын тоглолт
@@ -234,7 +256,7 @@ const LandingPage = () => {
                 эрхийг MOSCAP-аас авч хамтран ажилласан.
               </p>
             </div>
-          </Col>
+          </Col> */}
         </Row>
         <center style={{textDecoration: 'underline'}}>
           <Typography.Title level={4}>Бусад мэдээ</Typography.Title>
