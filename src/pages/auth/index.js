@@ -13,6 +13,7 @@ import LandingPage from 'pages/Landing';
 import React from 'react';
 import SignupPublisher from './Signup/SignupPublisher';
 import Repertory from 'pages/home/Repertory';
+import NewsDetail from 'pages/home/News/NewsDetail';
 
 const Signin = React.lazy(() => import('./Signin'));
 const SignupSongWriter = React.lazy(() => import('./Signup/SignupSongWriter'));
@@ -48,6 +49,10 @@ export const authRouteConfig = [
   {
     path: '/about',
     element: <About />,
+  },
+  {
+    path: '/news/d/:id',
+    element: <NewsDetail />,
   },
   {
     path: '/about/managment',

@@ -8,7 +8,7 @@ import {
   ArrowRightOutlined,
   FacebookFilled,
 } from '@ant-design/icons';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import LandingHeader from 'pages/home/Components/Header';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppPageMetadata from '@crema/core/AppPageMetadata';
@@ -25,6 +25,7 @@ const LandingPage = () => {
   const {messages} = useIntl();
   const dispatch = useDispatch();
   const {newsList} = useSelector(({news}) => news);
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(onGetNewsList());
   }, [dispatch]);
@@ -213,13 +214,14 @@ const LandingPage = () => {
             <Col key={'col-' + index}>
               <div
                 className='news-cisac'
-                key={index}
+                key={'image-i' + index}
+                onClick={() => navigate('/news/d/' + item.id)}
                 style={{
                   background: `linear-gradient(
                     179.84deg,
                     rgba(0, 0, 0, 0) 22.64%,
                     rgba(0, 0, 0, 0.8) 80.33%,
-                    #000000 99.86%,
+                    #000000 99.86%
                   ), url(https://moscap.mn/static/media/nsug2.50dbdd6d.jpg)`,
                   backgroundSize: `100%`,
                   backgroundRepeat: `no-repeat`,
@@ -228,35 +230,6 @@ const LandingPage = () => {
               </div>
             </Col>
           ))}
-          {/* <Col>
-            <div className='news-cisac' style={{  
-                background: `linear-gradient(179.84deg, rgba(0, 0, 0, 0) 22.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url(https://moscap.mn/static/media/cisac.177fa468.jpg)`,
-                backgroundSize: `100%`,
-                backgroundRepeat: `no-repeat`,
-              }}>
-              <p>
-                {' '}
-                CISAC-ийн Ази Номхон далайн бүсийн ээлжит хурал нь 2023 оны 5
-                сарын 10-наас 12-ний өдрүүдэд Тайланд улсын Бангкок хотод зохион
-                байгуулагдахаар гишүүн нийгэмлэгүүдэд урилга тараагдсан.
-              </p>
-            </div>
-          </Col>
-          <Col>
-            <div className='news-pantasia'
-             style={{  
-              background: `linear-gradient(179.84deg, rgba(0, 0, 0, 0) 22.64%, rgba(0, 0, 0, 0.8) 80.33%, #000000 99.86%), url( https://moscap.mn/static/media/news.bb742573.jpg)`,
-              backgroundSize: `100%`,
-              backgroundRepeat: `no-repeat`,
-            }}>
-              <p>
-                {' '}
-                Fantasia Studio нь Пиксар-н уран бүтээлүүдээр оркестрын тоглолт
-                зохион байгуулж уг тоглолтод тоглогдох бүтээлүүдийн онцгой
-                эрхийг MOSCAP-аас авч хамтран ажилласан.
-              </p>
-            </div>
-          </Col> */}
         </Row>
         <center style={{textDecoration: 'underline'}}>
           <Typography.Title level={4}>Бусад мэдээ</Typography.Title>
