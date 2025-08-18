@@ -17,7 +17,7 @@ const Address = () => {
         <div className='avatar-icon'>
           <FiPhone />
         </div>
-        <p>(+976) 9505 4846</p>
+        <p>7202 3999</p>
       </div>
       <div className='contact-address-item'>
         <div className='avatar-icon'>

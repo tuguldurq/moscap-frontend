@@ -228,7 +228,7 @@ export const footerMenus = [
         key: 5.1,
         label: (
           <a>
-            <IntlMessages id='common.footer.phone' />: (+976) 9505 4846
+            <IntlMessages id='common.footer.phone' />: 7202 3999
           </a>
         ),
       },
