@@ -36,7 +36,7 @@ const NewsDetail = () => {
             <div className='image-wrapper'>
               {newsItem?.images?.map((item, index) => (
                 <img
-                  src={item?.path}
+                  src={process.env.REACT_APP_STORAGE_URL + '/' + item?.path}
                   alt='Image description'
                   key={'news-image-' + index}
                 />

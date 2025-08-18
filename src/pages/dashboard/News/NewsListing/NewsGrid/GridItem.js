@@ -25,6 +25,7 @@ const GridItem = (props) => {
               <img
                 src={`${process.env.REACT_APP_STORAGE_URL}/${item?.images[0]['path']}`}
                 alt='watch'
+                style={{height: 250}}
               />
             </div>
           )}

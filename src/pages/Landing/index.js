@@ -222,7 +222,7 @@ const LandingPage = () => {
                     rgba(0, 0, 0, 0) 22.64%,
                     rgba(0, 0, 0, 0.8) 80.33%,
                     #000000 99.86%
-                  ), url(https://moscap.mn/static/media/nsug2.50dbdd6d.jpg)`,
+                  ), url(${process.env.REACT_APP_STORAGE_URL}/${item?.images[0]['path']})`,
                   backgroundSize: `100%`,
                   backgroundRepeat: `no-repeat`,
                 }}>
