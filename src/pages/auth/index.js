@@ -5,6 +5,7 @@ import History from 'pages/home/About/History';
 import Page1 from 'pages/home/Page/page1';
 import Page2 from 'pages/home/Page/page2';
 import Page3 from 'pages/home/Page/page3';
+import Page4 from 'pages/home/Page/page4';
 import Contact from 'pages/home/Contact';
 import Artist from 'pages/home/Artist';
 import MusicUsers from 'pages/home/MusicUsers';
@@ -45,6 +46,10 @@ export const authRouteConfig = [
   {
     path: '/page/3',
     element: <Page3 />,
+  },
+  {
+    path: '/page/4',
+    element: <Page4 />,
   },
   {
     path: '/about',

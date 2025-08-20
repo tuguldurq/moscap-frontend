@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Layout, Row, Col, Card, Typography, Button, Space} from 'antd';
+import {Layout, Row, Col, Card, Typography, Button, Space, Avatar} from 'antd';
 import './index.style.less';
 import MyCarousel from './Carousel';
 import {useIntl} from 'react-intl';
@@ -16,6 +16,7 @@ import CustomFooter from './Footer';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
 import {onGetNewsList} from 'redux/actions';
+import Meta from 'antd/lib/card/Meta';
 // import MyCarousel from './Carousel';
 const {Content} = Layout;
 // const {Title} = Typography;
@@ -102,7 +103,38 @@ const LandingPage = () => {
             shape='circle'
             icon={<ArrowDownOutlined style={{fontSize: '26px'}} />}></Button>
         </center>
-
+        <Row
+          gutter={{md: 40}}
+          justify={'center'}
+          style={{marginTop: 60, marginBottom: 120}}>
+          <Col sm={24} md={12} lg={11} xl={9} xxl={14} xs={xs}>
+            <Card
+              variant='borderless'
+              style={{padding: 24, boxShadow: 'none', borderColor: 'orange'}}>
+              <Meta
+                avatar={
+                  <Avatar
+                    src='/assets/images/logo-mini.png'
+                    style={{borderRadius: 0, height: 70, width: 55}}
+                  />
+                }
+                title='Хэвлэлийн мэдээ'
+                description='Монголын зохиолч, хөгжмийн зохиолч, нийтлэгчдийн нийгэмлэг (MOSCAP) нь зохиогчийн эрхийн хуулийн 49 зүйлийн 1.1 ба 1.3 р  заалтын дагуу гишүүддээ бүтээл ашигласны төлбөрийг олгохдоо тухайн бүтээлийг ашигласантай ...'></Meta>
+              <Link to={'/page/4'}>
+                <Button
+                  type='primary'
+                  style={{
+                    marginLeft: 70,
+                    marginTop: 20,
+                    borderColor: 'orange',
+                    background: 'orange',
+                  }}>
+                  {'Цааш унших'} <ArrowRightOutlined />
+                </Button>
+              </Link>
+            </Card>
+          </Col>
+        </Row>
         <Row
           gutter={{md: 40}}
           justify={'center'}
